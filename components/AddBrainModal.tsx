@@ -7,7 +7,6 @@ import CrossIcon from "./icons/CrossIcon";
 import apiClient from "@/lib/apiClient";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-
 type Inputs = {
   title: string;
   type: string;
@@ -31,7 +30,7 @@ const AddBrainModal = ({
     const res = await apiClient.post("/api/v1/content/new", {
       ...data,
     });
-    if(res.status !== 201){
+    if (res.status !== 201) {
       console.error("error occured while adding brain: ", res);
     }
     handleOpenModal();

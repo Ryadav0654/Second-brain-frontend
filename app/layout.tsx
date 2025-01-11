@@ -24,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script> 
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charSet="utf-8"
+      ></script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

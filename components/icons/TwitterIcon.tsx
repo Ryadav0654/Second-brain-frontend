@@ -3,13 +3,13 @@ import React from "react";
 const TwitterIcon = () => {
   return (
     <svg
-    fill="none"
-    height="24"
-    viewBox="0 0 24 24"
-    width="24"
-    stroke="currentColor"
-    className="size-5"
-    xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      stroke="currentColor"
+      className="size-5"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         id="Logo_00000038394049246713568260000012923108920998390947_"

@@ -15,7 +15,15 @@ interface CardProps {
   createdAt: Date;
   tags?: string[];
 }
-const Card = ({ type, title, username, link, id, tags, createdAt}: CardProps) => {
+const Card = ({
+  type,
+  title,
+  username,
+  link,
+  id,
+  tags,
+  createdAt,
+}: CardProps) => {
   const handleDelete = async () => {
     try {
       const res = await apiClient.delete(`/api/v1/content/delete/${id}`, {
@@ -28,9 +36,7 @@ const Card = ({ type, title, username, link, id, tags, createdAt}: CardProps) =>
   };
   return (
     // bg-slate-500/20
-    <div
-      className="bg-slate-500/20 text-white md:max-w-[40vw] lg:max-w-[30vw] xl:max-w-[24vw] w-full px-5 py-4 rounded-xl max-h-84 shadow-lg shadow-persian-blue-300/50"
-    >
+    <div className="bg-slate-500/20 text-white md:max-w-[40vw] lg:max-w-[30vw] xl:max-w-[24vw] w-full px-5 py-4 rounded-xl max-h-84 shadow-lg shadow-persian-blue-300/50">
       <div className="flex justify-between items-center ">
         <div className="flex gap-2 justify-center items-center">
           <DocumentIcon />
@@ -57,13 +63,13 @@ const Card = ({ type, title, username, link, id, tags, createdAt}: CardProps) =>
       <div className="mt-3">
         <h1 className="text-2xl text-white">{title}</h1>
         <div className="flex justify-between items-center">
-        <p className="text-white/60 text-sm">Author: {username}</p>
-        <p className="text-white/60 text-sm">{new Date(createdAt).toDateString()}</p>
+          <p className="text-white/60 text-sm">Author: {username}</p>
+          <p className="text-white/60 text-sm">
+            {new Date(createdAt).toDateString()}
+          </p>
         </div>
         <div className="flex gap-3 mt-2 overflow-x-scroll scrollbar-none">
-          {tags?.map((text) => (
-            <Tags key={text} text={text} />
-          ))}
+          {tags?.map((text) => <Tags key={text} text={text} />)}
         </div>
       </div>
     </div>

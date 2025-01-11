@@ -9,7 +9,7 @@ const CrossIcon = () => {
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
-    className="size-5"
+      className="size-5"
       viewBox="0 0 490 490"
     >
       <polygon

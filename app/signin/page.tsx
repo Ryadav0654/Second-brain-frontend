@@ -8,6 +8,7 @@ import { signInUrl } from "@/lib/config";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 interface SigninProps {
   username: string;
@@ -29,9 +30,11 @@ const Signin = () => {
         console.error("error occured while login: ", res);
       }
       console.log(res);
-
       if (res.status === 200) {
-        router.push("/dashboard");
+        toast.success(res.data.message);
+        setTimeout(() => {
+          router.push("/dashboard");
+        }, 1000);
       } else {
         console.error("error occured while login!");
       }
@@ -44,7 +47,7 @@ const Signin = () => {
     <div className="flex h-screen w-full px-24 py-10">
       <div className=" flex justify-center items-center w-[60vw]">
         {/* <h1 className="text-4xl">signIn photo</h1> */}
-        <Image width={500} height={500} src="/login-bg.png" alt="login image" />
+        <Image width={500} height={500} src="/login-bg.png" alt="login image" priority={true} />
         {/* <video className="z-10 w-full  bg-center bg-cover" loop src="./signIn.mp4"></video> */}
       </div>
       <div className="flex justify-center items-center flex-col w-[40vw]">

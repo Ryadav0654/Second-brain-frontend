@@ -7,6 +7,8 @@ import apiClient from "@/lib/apiClient";
 import { signUpUrl } from "@/lib/config";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface SignupProps {
   username: string;
@@ -19,13 +21,18 @@ const Signup = () => {
     reset,
     formState: { errors },
   } = useForm<SignupProps>();
-  const hanldeSignIn: SubmitHandler<SignupProps> = async (data) => {
+  const router = useRouter();
+  const hanldeSignUp: SubmitHandler<SignupProps> = async (data) => {
     reset();
+    console.log("data", {...data});
     try {
       const res = await apiClient.post(signUpUrl, { ...data });
       if (!res) {
+        toast.error("Failed to signup");
         console.error("error occured while login: ", res);
       }
+      toast.success(res.data.message);
+      router.push("/signin");
       console.log(res);
     } catch (error) {
       console.error("error occured while login: ", error);
@@ -36,19 +43,19 @@ const Signup = () => {
     <div className="flex h-screen w-full px-24 py-10">
       <div className=" flex justify-center items-center w-[60vw]">
         {/* <h1 className="text-4xl">signIn photo</h1> */}
-        <Image width={500} height={500} src="/login-bg.png" alt="" />
+        <Image width={500} height={500} src="/login-bg.png" alt="" priority={true}/>
         {/* <video className="z-10 w-full  bg-center bg-cover" loop src="./signIn.mp4"></video> */}
       </div>
       <div className=" flex justify-center items-center flex-col w-[40vw]">
         <h1 className="text-4xl font-extrabold"> WelCome to second Brain</h1>
         <form
-          onSubmit={handleSubmit(hanldeSignIn)}
+          onSubmit={handleSubmit(hanldeSignUp)}
           className="flex flex-col gap-4 w-full mt-6"
         >
           <Input
             type="text"
             {...register("username", { required: true, maxLength: 20 })}
-            placeholder="Enter your name"
+            placeholder="Enter your username"
             extraStyle="bg-gray-500/20 focus:outline-persian-blue-500"
           ></Input>
           {errors.username && (

@@ -34,6 +34,7 @@ const AddBrainModal = ({
       console.error("error occured while adding brain: ", res);
     }
     handleOpenModal();
+    window.location.reload();
   };
 
   return (

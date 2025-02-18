@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <div className=" px-4 py-8 min-h-screen w-full flex flex-col justify-between bg-slate-900/30 border-r-2 border-white/40">
       <div className="flex flex-col  gap-4 ">
-      <h1 className="text-2xl font-extrabold text-white">Second Brain</h1>
+      <h1 className="text-2xl font-extrabold text-white">BrainSync</h1>
         <Button
           type="button"
           variant="secondry"

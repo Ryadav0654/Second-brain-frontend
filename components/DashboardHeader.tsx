@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Button from "./Button";
 import ShareIcon from "./icons/ShareIcon";
@@ -21,7 +21,12 @@ const DashboardHeader = ({
           <MenuIcon />
         </span>
         <div className="absolute top-0 w-full left-0">
-        {isOpen && <MobileSidebar handleOpenModal={handleOpenModal} setIsOpen={setIsOpen} />}
+          {isOpen && (
+            <MobileSidebar
+              handleOpenModal={handleOpenModal}
+              setIsOpen={setIsOpen}
+            />
+          )}
         </div>
       </div>
       <div className="items-center gap-5 hidden md:flex">

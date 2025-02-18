@@ -8,7 +8,6 @@ import LogoutIcon from "./icons/LogoutIcon";
 import toast from "react-hot-toast";
 import getUser from "@/lib/actions/getUser";
 
-
 interface User {
   username: string;
 }

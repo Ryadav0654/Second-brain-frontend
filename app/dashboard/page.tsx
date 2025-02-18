@@ -6,7 +6,6 @@ import Sidebar from "@/components/Sidebar";
 import React from "react";
 import getContent from "@/lib/actions/getContent";
 import AddBrainModal from "@/components/AddBrainModal";
-import toast from "react-hot-toast";
 
 interface Content {
   _id: string;
@@ -46,7 +45,11 @@ const Dashboard = () => {
         <div className="col-span-6 lg:col-span-5 px-6 py-2">
           <DashboardHeader handleOpenModal={handleOpenModal} />
           <div className="flex justify-start  flex-wrap gap-8 pb-36 pt-6 max-h-screen md:px-6 md:pt-6 md:pb-24  overflow-y-scroll scrollbar-none">
-            {contents.length === 0 && <h1 className="text-3xl font-bold text-center">No contents found. Please add one.</h1>}
+            {contents.length === 0 && (
+              <h1 className="text-3xl font-bold text-center">
+                No contents found. Please add one.
+              </h1>
+            )}
             {contents.map((content) => (
               <Card
                 key={content._id}

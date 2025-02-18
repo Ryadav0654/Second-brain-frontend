@@ -43,11 +43,20 @@ const Signup = () => {
     <div className="flex h-screen w-full p-6 lg:px-24 lg:py-10">
       <div className="hidden md:flex justify-center items-center w-[60vw]">
         {/* <h1 className="text-4xl">signIn photo</h1> */}
-        <Image width={500} height={500} src="/login-bg.png" alt="" priority={true}/>
+        <Image
+          width={500}
+          height={500}
+          src="/login-bg.png"
+          alt=""
+          priority={true}
+        />
         {/* <video className="z-10 w-full  bg-center bg-cover" loop src="./signIn.mp4"></video> */}
       </div>
       <div className="flex justify-center items-center flex-col w-full md:w-[40vw]">
-        <h1 className="text-5xl md:text-4xl font-extrabold text-center leading-snug"> WelCome to <span className="text-persian-blue-500">BrainSync</span></h1>
+        <h1 className="text-5xl md:text-4xl font-extrabold text-center leading-snug">
+          {" "}
+          WelCome to <span className="text-persian-blue-500">BrainSync</span>
+        </h1>
         <form
           onSubmit={handleSubmit(hanldeSignUp)}
           className="flex flex-col text-xl md:text-lg gap-4 w-full mt-6"

@@ -4,7 +4,6 @@ import ShareIcon from "./icons/ShareIcon";
 import Tags from "./Tags";
 import DeleteIcon from "./icons/DeleteIcon";
 import DocumentIcon from "./icons/DocumentIcon";
-import apiClient from "@/lib/apiClient";
 import deleteBrain from "@/lib/actions/deleteBrain";
 import Link from "next/link";
 
@@ -26,8 +25,8 @@ const Card = ({
   tags,
   createdAt,
 }: CardProps) => {
-  console.log("type", type);  
-  if(type === "Youtube"){
+  console.log("type", type);
+  if (type === "Youtube") {
     const ylink = link.replace("watch?v=", "embed/");
     console.log(ylink);
   }
@@ -48,7 +47,14 @@ const Card = ({
       </div>
       <div className="mt-4">
         {type === "Youtube" ? (
-          <iframe className="w-full rounded-lg" src={link.replace("watch?v=", "embed/")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+          <iframe
+            className="w-full rounded-lg"
+            src={link.replace("watch?v=", "embed/")}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         ) : (
           <iframe
             className="w-full rounded-lg my-3 scrollbar-none"

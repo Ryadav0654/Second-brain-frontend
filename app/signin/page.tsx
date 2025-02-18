@@ -47,11 +47,20 @@ const Signin = () => {
     <div className="flex h-screen  w-full px-6 py-6 lg:px-24 lg:py-10">
       <div className="md:flex justify-center items-center w-[60vw] hidden ">
         {/* <h1 className="text-4xl">signIn photo</h1> */}
-        <Image width={500} height={500} src="/login-bg.png" alt="login image" priority={true} />
+        <Image
+          width={500}
+          height={500}
+          src="/login-bg.png"
+          alt="login image"
+          priority={true}
+        />
         {/* <video className="z-10 w-full  bg-center bg-cover" loop src="./signIn.mp4"></video> */}
       </div>
       <div className="flex justify-center items-center flex-col md:w-[40vw] w-full">
-        <h1 className="text-5xl md:text-4xl font-extrabold text-center "> Welcome to <span className="text-persian-blue-500">BrainSync</span></h1>
+        <h1 className="text-5xl md:text-4xl font-extrabold text-center ">
+          {" "}
+          Welcome to <span className="text-persian-blue-500">BrainSync</span>
+        </h1>
         <form
           onSubmit={handleSubmit(hanldeSignIn)}
           className="flex flex-col gap-4 w-full text-xl md:text-lg  mt-6"
@@ -67,14 +76,18 @@ const Signin = () => {
           )}
           <Input
             type="password"
-            {...register("password", { required: true, maxLength: 20, minLength: 8 })}
+            {...register("password", {
+              required: true,
+              maxLength: 20,
+              minLength: 8,
+            })}
             placeholder="Enter your password"
             extraStyle="bg-gray-500/20 focus:outline-persian-blue-500"
           ></Input>
           {errors.password && (
             <span className="text-red-500/80">Password is required.</span>
           )}
-          
+
           <Button
             type="submit"
             variant="secondry"
@@ -83,7 +96,7 @@ const Signin = () => {
           />
         </form>
         <p className="mt-4 ">
-          Don't have an account?{" "}
+          Don&#39;t have an account?{" "}
           <Link
             className="text-persian-blue-500 font-bold cursor-pointer"
             href="/signup"

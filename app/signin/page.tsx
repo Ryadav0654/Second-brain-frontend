@@ -26,10 +26,10 @@ const Signin = () => {
     try {
       reset();
       const res = await apiClient.post(signInUrl, { ...data });
-      if (!res) {
-        console.error("error occured while login: ", res);
-      }
-      console.log(res);
+      // if (!res) {
+      //   console.error("error occured while login: ", res);
+      // };
+      // console.log("res", res);
       if (res.status === 200) {
         toast.success(res.data.message);
         setTimeout(() => {
@@ -44,17 +44,17 @@ const Signin = () => {
   };
 
   return (
-    <div className="flex h-screen w-full px-24 py-10">
-      <div className=" flex justify-center items-center w-[60vw]">
+    <div className="flex h-screen  w-full px-6 py-6 lg:px-24 lg:py-10">
+      <div className="md:flex justify-center items-center w-[60vw] hidden ">
         {/* <h1 className="text-4xl">signIn photo</h1> */}
         <Image width={500} height={500} src="/login-bg.png" alt="login image" priority={true} />
         {/* <video className="z-10 w-full  bg-center bg-cover" loop src="./signIn.mp4"></video> */}
       </div>
-      <div className="flex justify-center items-center flex-col w-[40vw]">
-        <h1 className="text-4xl font-extrabold"> Welcome to second Brain</h1>
+      <div className="flex justify-center items-center flex-col md:w-[40vw] w-full">
+        <h1 className="text-5xl md:text-4xl font-extrabold text-center "> Welcome to <span className="text-persian-blue-500">BrainSync</span></h1>
         <form
           onSubmit={handleSubmit(hanldeSignIn)}
-          className="flex flex-col gap-4 w-full  mt-6"
+          className="flex flex-col gap-4 w-full text-xl md:text-lg  mt-6"
         >
           <Input
             type="text"
@@ -67,18 +67,19 @@ const Signin = () => {
           )}
           <Input
             type="password"
-            {...register("password", { required: true, maxLength: 20 })}
+            {...register("password", { required: true, maxLength: 20, minLength: 8 })}
             placeholder="Enter your password"
             extraStyle="bg-gray-500/20 focus:outline-persian-blue-500"
           ></Input>
           {errors.password && (
-            <span className="text-red-500/80">Password is required</span>
+            <span className="text-red-500/80">Password is required.</span>
           )}
+          
           <Button
             type="submit"
             variant="secondry"
             text="Signin"
-            extraStyle="flex text-persian-blue-500 font-bold items-center justify-center gap-2 w-full  font-normal"
+            extraStyle="flex text-persian-blue-500 font-bold items-center justify-center gap-2 w-full hover:bg-persian-blue-500/80 hover:text-white"
           />
         </form>
         <p className="mt-4 ">

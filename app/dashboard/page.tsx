@@ -6,8 +6,6 @@ import Sidebar from "@/components/Sidebar";
 import React from "react";
 import getContent from "@/lib/actions/getContent";
 import AddBrainModal from "@/components/AddBrainModal";
-import { set } from "react-hook-form";
-import getUser from "@/lib/actions/getUser";
 import toast from "react-hot-toast";
 
 interface Content {
@@ -33,8 +31,8 @@ const Dashboard = () => {
   }, []);
 
   const handleOpenModal = () => {
-    console.log("add button clicked", openModal);
-    toast.success("add button clicked");
+    // console.log("add button clicked", openModal);
+    // toast.success("add button clicked");
     setOpenModal(!openModal);
   };
 

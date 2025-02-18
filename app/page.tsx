@@ -10,11 +10,11 @@ export default function Home() {
       const res = await apiClient.get("/api/v1/user");
       // const user = res.data.data;
       // console.log("user", user);
-      if (res.status === 200) {
-        router.push("/dashboard");
+      if (res.status !== 200) {
         // console.error("error occured while getting user details: ", res);
+        router.push("/signin");
       }
-      router.push("/signin");
+      router.push("/dashboard");
     };
     getUserDetails();
   }, []);

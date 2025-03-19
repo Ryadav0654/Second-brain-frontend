@@ -60,6 +60,16 @@ const MobileSidebar = ({
         <Button
           type="button"
           variant="secondry"
+          text="Tweets"
+          onclick={() => {
+            setIsOpen(false);
+          }}
+          extraStyle="flex items-center gap-4 text-white bg-transparent hover:bg-persian-blue-100/20 font-normal"
+          startIcon={<TwitterIcon />}
+        />
+        <Button
+          type="button"
+          variant="secondry"
           text="Youtube"
           onclick={() => {
             setIsOpen(false);

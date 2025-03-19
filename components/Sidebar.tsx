@@ -7,6 +7,7 @@ import YoutubeIcon from "./icons/YoutubeIcon";
 import TwitterIcon from "./icons/TwitterIcon";
 import QuestionIcon from "./icons/QuestionIcon";
 import HomeIcon from "./icons/HomeIcon";
+import LinkIcon from "./icons/LinkIcon";
 
 const Sidebar = () => {
   return (
@@ -28,6 +29,14 @@ const Sidebar = () => {
           onclick={() => {}}
           extraStyle="flex items-center gap-3 w-full text-white bg-transparent hover:bg-persian-blue-100/20 font-normal"
           startIcon={<DocumentIcon />}
+        />
+        <Button
+          type="button"
+          variant="secondry"
+          text="Links"
+          onclick={() => {}}
+          extraStyle="flex items-center gap-3 w-full text-white bg-transparent hover:bg-persian-blue-100/20 font-normal"
+          startIcon={<LinkIcon />}
         />
         <Button
           type="button"

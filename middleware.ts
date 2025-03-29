@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const isPublicPath = path === "/signin" || path === "/signup";
-  const token = request.cookies.get("accessToken");
-  // console.log(token);
+
+  // Extract cookie value correctly
+  const token = request.cookies.get("accessToken")?.value;
+
+  console.log("Middleware Token:", token); // Debugging
+
   if (isPublicPath && token) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
@@ -15,7 +18,6 @@ export function middleware(request: NextRequest) {
   }
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
-  matcher: ["/", "/signin", "/signup", "/dashboard"],
+  matcher: ["/dashboard", "/signin", "/signup"],
 };

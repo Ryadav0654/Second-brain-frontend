@@ -18,7 +18,7 @@ const ProfileCard = () => {
   const handleLogout = async () => {
     try {
       const res = await apiClient.post("/api/v1/logout", {});
-      console.log(res);
+      // console.log(res);
       if (res.status === 201) {
         toast.success(res.data.message);
         router.push("/signin");
@@ -31,7 +31,7 @@ const ProfileCard = () => {
   useEffect(() => {
     const getUserDetails = async () => {
       const userDetails = await getUser();
-      console.log("userDetails", userDetails);
+      // console.log("userDetails", userDetails);
       setUser(userDetails);
     };
 

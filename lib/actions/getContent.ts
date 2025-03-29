@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import apiClient from "../apiClient";
 
 const getContent = async () => {
-  console.log("getting content");
+  // console.log("getting content");
   try {
     const content = await apiClient.get("/api/v1/content/all", {
       withCredentials: true,

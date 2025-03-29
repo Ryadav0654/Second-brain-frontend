@@ -6,7 +6,7 @@ const getUser = async () => {
       console.error("error occured while getting user details: ", res);
     }
     const user = await res.data.data;
-    console.log("user", user);
+    // console.log("user", user);
     return user;
   } catch (error) {
     console.error("error occured while getting user details: ", error);

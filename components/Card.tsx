@@ -25,11 +25,11 @@ const Card = ({
   tags,
   createdAt,
 }: CardProps) => {
-  console.log("type", type);
-  if (type === "Youtube") {
-    const ylink = link.replace("watch?v=", "embed/");
-    console.log(ylink);
-  }
+  // // console.log("type", type);
+  // if (type === "Youtube") {
+  //   const ylink = link.replace("watch?v=", "embed/");
+  //   // console.log(ylink);
+  // }
   return (
     // bg-slate-500/20
     <div className="bg-slate-500/20 text-white md:max-w-[40vw] lg:max-w-[30vw] xl:max-w-[24vw] w-full px-5 py-4 rounded-xl max-h-84 shadow-lg shadow-persian-blue-300/50">
